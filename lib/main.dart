@@ -14,19 +14,19 @@ void main() {
 }
 
 class ProfilePageApp extends StatelessWidget {
-  const ProfilePageApp({Key? key}) : super(key: key);
+  const ProfilePageApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Profile Page',
-      home: const ProfilePage(),
+      home: ProfilePage(),
     );
   }
 }
 
 class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -124,9 +124,9 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 20),
 
             // Contact Icons
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Icon(Icons.email, size: 30),
                 SizedBox(width: 20),
                 Icon(Icons.phone, size: 30),
