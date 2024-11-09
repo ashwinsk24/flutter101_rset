@@ -1,3 +1,3 @@
-# Profile Page 
+# Flutter 101 @RSET
 
-A new Flutter project.
+An introduction to App Development using Flutter!
