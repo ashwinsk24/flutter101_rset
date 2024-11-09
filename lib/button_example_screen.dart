@@ -1,26 +1,30 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class ButtonExampleScreen extends StatelessWidget {
+  const ButtonExampleScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Button Examples')),
+      appBar: AppBar(title: const Text('Button Examples')),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () => print("ElevatedButton clicked"),
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextButton(
               onPressed: () => print("TextButton clicked"),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             IconButton(
-              icon: Icon(Icons.headset_rounded),
+              icon: const Icon(Icons.headset_rounded),
               onPressed: () => print("IconButton clicked"),
             ),
           ],
