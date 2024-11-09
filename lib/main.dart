@@ -1,35 +1,89 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'follow_provider.dart';
-import 'package:app2/screens/profile_page.dart';
-import 'screens/edit_profile_page.dart';
+import 'input_form_screen.dart';
+import 'button_example_screen.dart';
 
-void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => FollowProvider()),
-      ],
-      child: const ProfilePageApp(),
-    ),
-  );
-}
+void main() => runApp(MyApp());
 
-class ProfilePageApp extends StatelessWidget {
-  const ProfilePageApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Profile Page',
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const ProfilePage(),
-        '/editProfile': (context) => const EditProfilePage(),
-      },
+      title: 'Flutter Demo',
+      home: HomeScreen(),
     );
   }
 }
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Flutter Basics')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InputFormScreen()),
+                );
+              },
+              child: Text('Go to Input Form Example'),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ButtonExampleScreen()),
+                );
+              },
+              child: Text('Go to Button Example'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import 'follow_provider.dart';
+// import 'package:app2/screens/profile_page.dart';
+// import 'screens/edit_profile_page.dart';
+
+// void main() {
+//   runApp(
+//     MultiProvider(
+//       providers: [
+//         ChangeNotifierProvider(create: (_) => FollowProvider()),
+//       ],
+//       child: const ProfilePageApp(),
+//     ),
+//   );
+// }
+
+// class ProfilePageApp extends StatelessWidget {
+//   const ProfilePageApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Profile Page',
+//       initialRoute: '/',
+//       routes: {
+//         '/': (context) => const ProfilePage(),
+//         '/editProfile': (context) => const EditProfilePage(),
+//       },
+//     );
+//   }
+// }
 
 
 
